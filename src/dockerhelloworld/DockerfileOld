@@ -1,0 +1,19 @@
+#base image
+FROM openjdk:14
+
+#create folder in image
+RUN mkdir /app
+
+#copy from host to image
+COPY out/production/Docker/dockerhelloworld/ /app
+
+#folder for future commands
+WORKDIR /app
+
+#run main class
+#CMD java -classpath /app dockerhelloworld.HelloWorld
+#CMD java dockerhelloworld.dockerhelloworld.HelloWorld
+CMD java dockerhelloworld.HelloWorld
+
+
+
