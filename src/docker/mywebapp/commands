@@ -1,0 +1,14 @@
+https://github.com/daliasheasha/MyWebApp
+
+build war file
+mvn clean install
+
+docker build -t my-web_app:1.0  .
+
+docker run --name app -d  -p 8080:8080 my-web_app:1.0
+
+docker-compose -f src/docker/mywebapp/docker-compose.yml up
+
+
+STARTS BUT PROBLEM WHEN SUBMITTING FORM
+LOG: javax.persistence.spi::No valid providers found.
