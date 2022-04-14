@@ -1,4 +1,4 @@
-package springboothelloworld;
+package springboothelloworld.resource;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -10,5 +10,4 @@ public class HelloResource {
     public String hello() {
         return "Hello world";
     }
-
 }

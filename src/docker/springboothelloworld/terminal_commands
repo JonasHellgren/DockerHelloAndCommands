@@ -1,0 +1,6 @@
+docker build -f src/docker/springboothelloworld/Dockerfile -t springhello .
+
+DOES NOT WORK
+
+docker run -p 8085:8085 springhello
+

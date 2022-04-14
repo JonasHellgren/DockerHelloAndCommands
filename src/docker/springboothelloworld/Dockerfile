@@ -1,6 +1,17 @@
 #base image
 FROM openjdk:14
 
-ADD out/artifacts/DockerTutorials_jar/DockerTutorials.jar docker-spring-boot.jar
+#copy from host to image
+COPY src/ /src/
+
+#compile code in image
+RUN javac /src/main/java/springboothelloworld/SpringApplication.java -d /app
+
+#folder for future commands
+WORKDIR /app
+
 EXPOSE 8085
-ENTRYPOINT ["java", "-jar","docker-spring-boot.jar"]
+
+#run main class
+CMD ["java", "springboothelloworld.SpringApplication"]
+
